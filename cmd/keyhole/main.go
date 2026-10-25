@@ -13,7 +13,8 @@ import (
 	"github.com/kaykumar/keyhole/internal/scan"
 )
 
-const version = "0.1.0"
+// version is overridden at release time via -ldflags "-X main.version=...".
+var version = "dev"
 
 func main() {
 	if len(os.Args) < 2 || os.Args[1] != "scan" {
