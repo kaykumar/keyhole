@@ -1,0 +1,7 @@
+.git
+.github
+dist/
+*.sarif
+/keyhole
+examples
+README.md

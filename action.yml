@@ -1,0 +1,40 @@
+name: "Keyhole"
+description: "Scan for weak and compromised certificate keys and trust-store exposure."
+branding:
+  icon: "key"
+  color: "purple"
+inputs:
+  path:
+    description: "File or directory to scan"
+    required: false
+    default: "."
+  format:
+    description: "Output format: sarif or text"
+    required: false
+    default: "sarif"
+  output:
+    description: "Output file (upload this as SARIF in a later step)"
+    required: false
+    default: "keyhole.sarif"
+  fail-on:
+    description: "Minimum severity that fails the run: critical|high|warning|note|none"
+    required: false
+    default: "high"
+  max-scalar:
+    description: "Upper bound for the weak-key scalar search (0 = built-in default)"
+    required: false
+    default: "0"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - "scan"
+    - "--format"
+    - ${{ inputs.format }}
+    - "--output"
+    - ${{ inputs.output }}
+    - "--fail-on"
+    - ${{ inputs.fail-on }}
+    - "--max-scalar"
+    - ${{ inputs.max-scalar }}
+    - ${{ inputs.path }}

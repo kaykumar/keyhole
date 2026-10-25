@@ -1,0 +1,14 @@
+{
+  "note": "Populate each sha256 from an authoritative source (CCADB, Mozilla OneCRL, or the vendor blocklists / JDK blocked.certs) before relying on fingerprint matching. Entries with an empty sha256 are placeholders and are ignored at load time. The weak-key detector does NOT need this list and works on its own. See the README section 'Updating the blocklist'.",
+  "updated": "2026-10-25",
+  "entries": [
+    {"sha256": "", "name": "EM DV TLS CA - G3B", "reason": "eMudhra TLS intermediate, weak P-384 key recoverable from the public certificate (Oct 2026)", "source": "CCADB / Mozilla OneCRL"},
+    {"sha256": "", "name": "EM DV TLS CA - G3C", "reason": "eMudhra TLS intermediate, weak P-384 key recoverable from the public certificate (Oct 2026)", "source": "CCADB / Mozilla OneCRL"},
+    {"sha256": "", "name": "EM OV TLS CA - G3B", "reason": "eMudhra TLS intermediate, weak P-384 key recoverable from the public certificate (Oct 2026)", "source": "CCADB / Mozilla OneCRL"},
+    {"sha256": "", "name": "EM OV TLS CA - G3C", "reason": "eMudhra TLS intermediate, weak P-384 key recoverable from the public certificate (Oct 2026)", "source": "CCADB / Mozilla OneCRL"},
+    {"sha256": "", "name": "EM EV TLS CA - G3B", "reason": "eMudhra TLS intermediate, weak P-384 key recoverable from the public certificate (Oct 2026)", "source": "CCADB / Mozilla OneCRL"},
+    {"sha256": "", "name": "EM EV TLS CA - G3C", "reason": "eMudhra TLS intermediate, weak P-384 key recoverable from the public certificate (Oct 2026)", "source": "CCADB / Mozilla OneCRL"},
+    {"sha256": "", "name": "EM OV CS CA - G3B", "reason": "eMudhra CODE-SIGNING intermediate, weak P-384 key recoverable from the public certificate (Oct 2026)", "source": "CCADB / Mozilla OneCRL"},
+    {"sha256": "", "name": "EM OV CS CA - G3C", "reason": "eMudhra CODE-SIGNING intermediate, weak P-384 key recoverable from the public certificate (Oct 2026)", "source": "CCADB / Mozilla OneCRL"}
+  ]
+}

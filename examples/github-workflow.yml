@@ -1,0 +1,30 @@
+# Copy this into .github/workflows/keyhole.yml in your repository.
+name: Keyhole
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+  security-events: write   # required to upload SARIF to code scanning
+
+jobs:
+  keyhole:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Keyhole
+        # Pin to a release tag in production, e.g. kaykumar/keyhole@v0.1.0
+        uses: kaykumar/keyhole@main
+        with:
+          path: .
+          output: keyhole.sarif
+          fail-on: high
+
+      - name: Upload results to code scanning
+        if: always()
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: keyhole.sarif
