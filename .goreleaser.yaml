@@ -43,22 +43,6 @@ changelog:
       - "^test:"
       - "^ci:"
 
-dockers_v2:
-  - id: keyhole
-    images:
-      - ghcr.io/kaykumar/keyhole
-    tags:
-      - "{{ .Version }}"
-      - latest
-    dockerfile: Dockerfile.goreleaser
-    platforms:
-      - linux/amd64
-      - linux/arm64
-    labels:
-      org.opencontainers.image.source: https://github.com/kaykumar/keyhole
-      org.opencontainers.image.version: "{{ .Version }}"
-      org.opencontainers.image.licenses: Apache-2.0
-
 release:
   draft: false
   prerelease: auto

@@ -3,7 +3,8 @@
 FROM golang:1.22-alpine AS build
 WORKDIR /src
 COPY . .
-RUN CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o /out/keyhole ./cmd/keyhole
+ARG VERSION=dev
+RUN CGO_ENABLED=0 go build -trimpath -ldflags="-s -w -X main.version=${VERSION}" -o /out/keyhole ./cmd/keyhole
 
 FROM gcr.io/distroless/static-debian12:latest
 LABEL org.opencontainers.image.source="https://github.com/kaykumar/keyhole"

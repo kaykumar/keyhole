@@ -1,4 +1,0 @@
-# Used by GoReleaser: copies the prebuilt binary into a minimal image.
-FROM gcr.io/distroless/static-debian12:latest
-COPY keyhole /usr/local/bin/keyhole
-ENTRYPOINT ["/usr/local/bin/keyhole"]
